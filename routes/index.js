@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 const aboutRoute = require('./about');
+const userRoute = require('./user');
+
 
 
 const baseURL = 'https://api.github.com';
@@ -27,6 +29,8 @@ router.get('/', ( req, res ) => {
 
 // individual routes
 router.use('/about', aboutRoute);
+router.use('/user', userRoute);
+
 
 
 

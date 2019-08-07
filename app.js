@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const routes = require('./routes/index');
+const routes = require('./routes');
 
 
 app.use('/', routes)
@@ -9,7 +9,7 @@ app.use('/', routes)
 const baseURL = 'https://api.github.com';
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   var err = new Error('Network Request error');
   err.status = 404;
   next(err);
@@ -22,7 +22,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.send(err.message);
 });
-
 
 
 module.exports = app;
