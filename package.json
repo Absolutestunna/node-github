@@ -2,7 +2,7 @@
   "name": "node-github",
   "version": "0.0.1",
   "description": "Sample express app to fetch information using github api",
-  "main": "start.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

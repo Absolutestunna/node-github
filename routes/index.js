@@ -1,29 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const axios = require('axios');
+const requestFunc = require('./../lib/requestFunc')
+
+
+const query = '/';
+//routes
 const aboutRoute = require('./about');
 const userRoute = require('./user');
 
 
-
-const baseURL = 'https://api.github.com';
-
-
 //main index route
 router.get('/', ( req, res ) => {
-  // res.send('At the index route')
-  axios.get(`${baseURL}`)
-  .then( response => {
-    // handle success
-    console.log('response', response.data);
-    const { data } = response;
-    res.json(data);
-  })
-  .catch( error => {
-    // handle error
-    console.log('ERROR', error);
-  })
-
+  requestFunc(query, req, res);
 });
 
 
